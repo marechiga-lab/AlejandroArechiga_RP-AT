@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro Aréchiga Morales - vCard Digital</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos personalizados para la tipografía Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B3D66; /* Fondo Principal */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* Estilo para los botones de acción armonizados */
+        .action-button {
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background-color: #013968; /* Fondo Alternativo de Contraste */
+            color: #ffffff; /* Texto Resaltado o Enlaces */
+        }
+        .action-button:hover {
+            transform: translateY(-2px);
+            background-color: #0B3D66; /* Fondo Principal al pasar el cursor */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        .action-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(143, 166, 186, 0.6); /* Azul de Enfoque */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor Principal de la Tarjeta (Fondo de Tarjetas #ffffff y Azul Claro de Apoyo #CCDCE3) -->
+    <div class="w-full max-w-sm mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden p-6 md:p-8 border border-[#CCDCE3] my-8">
+
+        <!-- Sección Superior: Nombre, Logo Único y Marcas -->
+        <header class="text-center mb-6">
+            
+            <!-- Nombre en Texto Principal (#1f2937) -->
+            <h1 class="text-2xl font-extrabold text-[#1f2937] leading-tight">Alejandro Aréchiga Morales</h1>
+            
+            <!-- Título del puesto en Rojo de Alerta (#831419) para un excelente contraste y elegancia corporativa -->
+            <p class="text-md font-bold text-[#831419] uppercase tracking-wider mt-1.5 mb-6">Socio Nominal</p>
+
+            <!-- Espacio para un ÚNICO Logo Centralizado -->
+            <div class="flex justify-center items-center pt-4 border-t border-[#CCDCE3]">
+                <!-- Recuadro para el Logo de Ramírez Palos -->
+                <div class="bg-white p-3 rounded-2xl flex items-center justify-center h-24 w-24 border border-[#CCDCE3] shadow-sm"> 
+                    <!-- Reemplaza "logo-ramirezpalos.png" con la ruta de tu logo real cuando lo tengas listo -->
+                    <img src="logo-ramirezpalos.png" alt="RAMÍREZ PALOS LOGO" class="max-h-full max-w-full object-contain" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/120x120/0B3D66/FFFFFF?text=RP';" 
+                         title="Ramírez Palos Logo"/>
+                </div>
+            </div>
+             <!-- Texto Secundario (#4b5563) -->
+             <p class="text-[10px] font-semibold text-[#4b5563] tracking-wider mt-4 uppercase">Ramírez Palos | Firma Legal</p>
+        </header>
+
+        <!-- Sección de Botones de Contacto Armonizados -->
+        <main class="space-y-4">
+            
+            <!-- Botón de Teléfono -->
+            <a href="tel:+523311605660" class="action-button flex items-center justify-center p-3 rounded-xl">
+                <svg class="w-5 h-5 mr-3 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.717 21 3 14.283 3 6V5z"></path>
+                </svg>
+                <span class="font-bold text-sm">Llamar: 33 1160 5660</span>
+            </a>
+
+            <!-- Botón de Correo Electrónico (Solo el icono y la dirección) -->
+            <a href="mailto:alejandro.arechiga@ramirezpalos.com" class="action-button flex items-center justify-center p-3 rounded-xl">
+                <svg class="w-5 h-5 mr-3 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-19 4v7a2 2 0 002 2h16a2 2 0 002-2v-7"></path>
+                </svg>
+                <span class="font-bold text-sm truncate">alejandro.arechiga@ramirezpalos.com</span>
+            </a>
+
+            <!-- Botón de Sitio Web Oficial -->
+            <a href="https://ramirezpalos.com/" target="_blank" class="action-button flex items-center justify-center p-3 rounded-xl">
+                <svg class="w-5 h-5 mr-3 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                </svg>
+                <span class="font-bold text-sm">Visitar Sitio Web</span>
+            </a>
+
+            <!-- Botón de LinkedIn -->
+            <a href="https://www.linkedin.com/in/alejandro-ar%C3%A9chiga-morales-475420137" target="_blank" class="action-button flex items-center justify-center p-3 rounded-xl">
+                <svg class="w-5 h-5 mr-3 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.528-4 0v5.604h-3v-11h3v1.765c1.395-2.535 7-2.358 7 3.551v5.684z"/>
+                </svg>
+                <span class="font-bold text-sm">Ver Perfil de LinkedIn</span>
+            </a>
+            
+            <!-- Botón para guardar contacto (vCard) -->
+            <button id="vcard-button" class="action-button w-full flex items-center justify-center p-3 rounded-xl">
+                <svg class="w-5 h-5 mr-3 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
+                </svg>
+                <span class="font-bold text-sm">Guardar Contacto (vCard)</span>
+            </button>
+        </main>
+        
+        <!-- Código QR -->
+        <footer class="mt-8 pt-5 border-t border-[#CCDCE3] text-center">
+             <p class="text-xs font-semibold text-[#4b5563] tracking-wide mb-3 uppercase">Escanea para guardar mi contacto</p>
+             <div class="bg-white p-2.5 inline-block rounded-xl shadow-lg border border-[#CCDCE3]">
+                 <!-- Código QR optimizado con el nuevo título 'Socio Nominal' y la nueva paleta -->
+                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3AAr%C3%A9chiga%20Morales%3BAlejandro%0AFN%3AAlejandro%20Ar%C3%A9chiga%20Morales%0ATITLE%3ASocio%20Nominal%0AORG%3ARam%C3%ADrez%20Palos%0ATEL%3A%2B523311605660%0AEMAIL%3Aalejandro.arechiga%40ramirezpalos.com%0AURL%3Ahttps%3A%2F%2Fwww.linkedin.com%2Fin%2Falejandro-ar%25C3%25A9chiga-morales-475420137%0AURL%3Ahttps%3A%2F%2Framirezpalos.com%2F%0AEND%3AVCARD" 
+                      alt="Código QR de vCard" 
+                      class="w-24 h-24">
+             </div>
+        </footer>
+
+    </div>
+
+    <!-- Script optimizado para descarga de vCard -->
+    <script>
+        document.getElementById('vcard-button').addEventListener('click', function() {
+            const vCardContent = `BEGIN:VCARD
+VERSION:3.0
+N:Aréchiga Morales;Alejandro;;;
+FN:Alejandro Aréchiga Morales
+TITLE:Socio Nominal
+ORG:Ramírez Palos
+TEL;TYPE=CELL:+523311605660
+EMAIL;TYPE=PREF,INTERNET:alejandro.arechiga@ramirezpalos.com
+URL:https://www.linkedin.com/in/alejandro-ar%C3%A9chiga-morales-475420137
+URL:https://ramirezpalos.com/
+END:VCARD`;
+
+            // Función para conversión segura UTF-8 a Base64 respetando acentos
+            function utoa(str) {
+                return window.btoa(unescape(encodeURIComponent(str)));
+            }
+
+            // BOM para asegurar compatibilidad de caracteres especiales en iOS/Android
+            const bom = "\uFEFF";
+            const base64Content = utoa(bom + vCardContent);
+            
+            // Descarga segura por blob/base64
+            const link = document.createElement('a');
+            link.href = 'data:text/vcard;charset=utf-8;base64,' + base64Content;
+            link.download = 'Alejandro_Arechiga.vcf';
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+
+</body>
+</html>
