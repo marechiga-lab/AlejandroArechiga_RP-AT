@@ -58,7 +58,7 @@
                      title="Ramírez Palos Logo"/>
             </div>
              <!-- Texto Secundario (#4b5563) -->
-             <p class="text-[10px] font-semibold text-[#4b5563] tracking-wider mt-4 uppercase">Propiedad Intelectual | Corporativo</p>
+             <p class="text-[10px] font-semibold text-[#4b5563] tracking-wider mt-4 uppercase">Ramírez Palos | Firma Legal</p>
         </header>
 
         <!-- Sección de Botones de Contacto Armonizados -->
@@ -118,38 +118,52 @@
 
     </div>
 
-    <!-- Script optimizado para descarga de vCard -->
+    <!-- Script de descarga compatible con iOS, Android y Navegadores de Escritorio -->
     <script>
         document.getElementById('vcard-button').addEventListener('click', function() {
-            const vCardContent = `BEGIN:VCARD
-VERSION:3.0
-N:Aréchiga Morales;Alejandro;;;
-FN:Alejandro Aréchiga Morales
-TITLE:Socio Nominal
-ORG:Ramírez Palos
-TEL;TYPE=CELL:+523311605660
-EMAIL;TYPE=PREF,INTERNET:alejandro.arechiga@ramirezpalos.com
-URL:https://www.linkedin.com/in/alejandro-ar%C3%A9chiga-morales-475420137
-URL:https://ramirezpalos.com/
-END:VCARD`;
-
-            // Función para conversión segura UTF-8 a Base64 respetando acentos
-            function utoa(str) {
-                return window.btoa(unescape(encodeURIComponent(str)));
-            }
-
-            // BOM para asegurar compatibilidad de caracteres especiales en iOS/Android
-            const bom = "\uFEFF";
-            const base64Content = utoa(bom + vCardContent);
+            // Estructura oficial del formato vCard 3.0 usando saltos de línea CRLF (\r\n) estrictos
+            const vCardLines = [
+                'BEGIN:VCARD',
+                'VERSION:3.0',
+                'N:Aréchiga Morales;Alejandro;;;',
+                'FN:Alejandro Aréchiga Morales',
+                'TITLE:Socio Nominal',
+                'ORG:Ramírez Palos',
+                'TEL;TYPE=CELL,VOICE:+523311605660',
+                'EMAIL;TYPE=PREF,INTERNET:alejandro.arechiga@ramirezpalos.com',
+                'URL;TYPE=WORK:https://ramirezpalos.com/',
+                'URL;TYPE=LINKEDIN:https://www.linkedin.com/in/alejandro-ar%C3%A9chiga-morales-475420137',
+                'END:VCARD'
+            ];
             
-            // Descarga segura por blob/base64
-            const link = document.createElement('a');
-            link.href = 'data:text/vcard;charset=utf-8;base64,' + base64Content;
-            link.download = 'Alejandro_Arechiga.vcf';
+            const vCardContent = vCardLines.join('\r\n');
 
+            // 1. Añadimos el BOM UTF-8 (Byte Order Mark) para compatibilidad total de caracteres con tildes en Windows/Outlook
+            const bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
+            
+            // 2. Convertimos el contenido de texto a un array binario UTF-8
+            const encoder = new TextEncoder();
+            const textArray = encoder.encode(vCardContent);
+            
+            // 3. Fusionamos el BOM con los bytes de la vCard en un único buffer binario
+            const fileData = new Blob([bom, textArray], { type: 'text/vcard;charset=utf-8;' });
+            
+            // 4. Creamos una URL de objeto (Blob URL), un estándar seguro y soportado por navegadores móviles sin restricciones
+            const fileUrl = URL.createObjectURL(fileData);
+            
+            // 5. Simulación de clic de descarga controlado
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = 'Alejandro_Arechiga_Morales.vcf';
+            
             document.body.appendChild(link);
             link.click();
-            document.body.removeChild(link);
+            
+            // 6. Limpieza en memoria de la URL temporal
+            setTimeout(() => {
+                document.body.removeChild(link);
+                URL.revokeObjectURL(fileUrl);
+            }, 100);
         });
     </script>
 
